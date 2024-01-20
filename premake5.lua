@@ -1,5 +1,6 @@
 workspace "Reaper"
 	architecture "x64"
+    startproject "Sandbox"
 
 	configurations {
 		"Deubg",
