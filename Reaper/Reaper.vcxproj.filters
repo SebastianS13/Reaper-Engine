@@ -27,9 +27,15 @@
     <ClInclude Include="Source\Reaper\EntryPoint.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Reaper\Log.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Reaper\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Reaper\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

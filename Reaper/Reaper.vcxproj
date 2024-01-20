@@ -11,12 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Reaper\Log.hpp" />
     <ClInclude Include="Source\Reaper.hpp" />
     <ClInclude Include="Source\Reaper\Application.hpp" />
     <ClInclude Include="Source\Reaper\Core.hpp" />
     <ClInclude Include="Source\Reaper\EntryPoint.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Reaper\Log.cpp" />
     <ClCompile Include="Source\Reaper\Application.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -67,6 +69,7 @@
       <PreprocessorDefinitions>RE_PLATFORM_WINDOWS; RE_BUILD_DLL; _DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Reaper\vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -82,6 +85,7 @@
       <PreprocessorDefinitions>RE_PLATFORM_WINDOWS; RE_BUILD_DLL; NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Reaper\vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

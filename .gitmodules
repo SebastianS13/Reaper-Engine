@@ -1,0 +1,3 @@
+[submodule "Reaper/vendor/spdlog"]
+	path = Reaper/vendor/spdlog
+	url = https://github.com/gabime/spdlog
