@@ -8,6 +8,9 @@
 #include "Reaper/Events/ApplicationEvent.hpp"
 #include "Reaper/Events/MouseEvent.hpp"
 
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+
 namespace Reaper {
 	static bool s_GLFWInitialized = false;
 	
@@ -51,6 +54,8 @@ namespace Reaper {
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		RE_CORE_ASSERT(status, "Failed to initialize GLAD");
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 

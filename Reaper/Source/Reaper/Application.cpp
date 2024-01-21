@@ -3,7 +3,7 @@
 #include "Application.hpp"
 
 #include "Reaper/Log.hpp"
-#include <gl/GL.h>
+#include <glad/glad.h>
 
 namespace Reaper {
 
@@ -13,6 +13,9 @@ namespace Reaper {
 	{
 		m_window = std::unique_ptr<Window>(Window::Create());
 		m_window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+
+		unsigned int id;
+		glGenVertexArrays(1, &id);
 	}
 
 

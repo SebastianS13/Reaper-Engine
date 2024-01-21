@@ -12,8 +12,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDirs = {}
 IncludeDirs["GLFW"] = "Reaper/vendor/GLFW/include"
+IncludeDirs["Glad"] = "Reaper/vendor/Glad/include"
 
 include "Reaper/vendor/GLFW"
+include "Reaper/vendor/Glad"
 
 project "Reaper"
 	location "Reaper"
@@ -34,11 +36,13 @@ project "Reaper"
 	includedirs {
 		"%{prj.name}/vendor/spdlog/include",
 		"Reaper/Source",
-		"%{IncludeDirs.GLFW}"
+		"%{IncludeDirs.GLFW}",
+		"%{IncludeDirs.Glad}"
 	}
 
 	links {
 		"GLFW",
+		"Glad",
 		"opengl32.lib",
 		"msvcrt.lib"
 	}
@@ -52,7 +56,9 @@ project "Reaper"
 
 		defines {
 			"RE_PLATFORM_WINDOWS",
-			"RE_BUILD_DLL"
+			"RE_BUILD_DLL",
+			"RE_ENABLE_ASSERTS",
+			"GLFW_INCLUDE_NONE",
 		}
 
 		postbuildcommands {
