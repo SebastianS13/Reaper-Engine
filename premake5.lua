@@ -61,14 +61,17 @@ project "Reaper"
 	
 	filter "Configurations:Debug"
 		defines "RE_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 	
 	filter "Configurations:Release"
 		defines "RE_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "Configurations:Dist"
 		defines "RE_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 
@@ -106,12 +109,15 @@ project "Sandbox"
 	
 	filter "Configurations:Debug"
 		defines "RE_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 	
 	filter "Configurations:Release"
 		defines "RE_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "Configurations:Dist"
 		defines "RE_DIST"
+		buildoptions "/MD"
 		optimize "On"

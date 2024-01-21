@@ -2,10 +2,11 @@
 
 #include "Core.hpp"
 
-#include "Events/Event.hpp"
-#include "Reaper/Events/ApplicationEvent.hpp"
-
 #include "Window.hpp"
+
+#include "Reaper/LayerStack.hpp"
+#include "Reaper/Events/Event.hpp"
+#include "Reaper/Events/ApplicationEvent.hpp"
 
 namespace Reaper {
 
@@ -18,11 +19,15 @@ namespace Reaper {
 		void Run();
 
 		void OnEvent(Event& e);
+
+		void PushLayer(Layer* layer);
+		void PushOverlay(Layer* layer);
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_window = nullptr;
 		bool m_Running = true;
+		LayerStack m_LayerStack;
 	};
 
 	// To be defined by clients
