@@ -5,6 +5,8 @@
 #include "Reaper/Log.hpp"
 #include <glad/glad.h>
 
+#include "Reaper/Input.hpp"
+
 namespace Reaper {
 
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
@@ -70,6 +72,9 @@ namespace Reaper {
 			{
 				layer->OnUpdate();
 			}
+
+			auto [x, y] = Input::GetMousePosition();
+			RE_CORE_TRACE("{0}, {1}", x, y);
 
 			m_window->OnUpdate();
 		}
