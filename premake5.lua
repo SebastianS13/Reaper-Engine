@@ -10,6 +10,11 @@ workspace "Reaper"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDirs = {}
+IncludeDirs["GLFW"] = "Reaper/vendor/GLFW/include"
+
+include "Reaper/vendor/GLFW"
+
 project "Reaper"
 	location "Reaper"
 	kind "SharedLib"
@@ -29,7 +34,16 @@ project "Reaper"
 	includedirs {
 		"%{prj.name}/vendor/spdlog/include",
 		"Reaper/Source",
+		"%{IncludeDirs.GLFW}"
 	}
+
+	links {
+		"GLFW",
+		"opengl32.lib",
+		"msvcrt.lib"
+	}
+
+	
 
 	filter "system:windows"
 		cppdialect "C++17"

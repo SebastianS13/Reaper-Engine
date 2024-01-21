@@ -9,7 +9,7 @@ namespace Reaper {
 
 	Application::Application()
 	{
-
+		m_window = std::unique_ptr<Window>(Window::Create());
 	}
 
 
@@ -21,10 +21,11 @@ namespace Reaper {
 	void Application::Run()
 	{
 		// Test event to make sure event system is working
-		WindowResizeEvent e(1280, 720);
-		RE_TRACE(e);
 
-		while (true);
+		while (m_Running)
+		{
+			m_window->OnUpdate();
+		}
 	}
 
 }
