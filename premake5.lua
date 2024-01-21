@@ -18,6 +18,9 @@ project "Reaper"
 	targetdir ("bin/".. outputdir.. "/%{prj.name}")
 	objdir ("bin-int/".. outputdir.. "/%{prj.name}")
 
+	pchheader "repch.hpp"
+	pchsource "Reaper/Source/repch.cpp"
+
 	files {
 		"%{prj.name}/Source/**.hpp",
 		"%{prj.name}/Source/**.cpp"

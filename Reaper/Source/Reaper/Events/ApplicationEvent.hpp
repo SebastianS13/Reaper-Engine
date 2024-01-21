@@ -1,7 +1,6 @@
 #pragma once
 
 #include "KeyEvent.hpp"
-#include <sstream>
 
 namespace Reaper {
 

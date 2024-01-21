@@ -2,9 +2,6 @@
 
 #include "Reaper/Core.hpp"
 
-#include <string>
-#include <functional>
-
 namespace Reaper {
 
 	// When events are dispatched they have to be handled right then and there.

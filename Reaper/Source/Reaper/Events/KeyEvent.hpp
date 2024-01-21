@@ -2,8 +2,6 @@
 
 #include "Event.hpp"
 
-#include <sstream>
-
 namespace Reaper {
 
 	class REAPER_API KeyEvent : public Event
