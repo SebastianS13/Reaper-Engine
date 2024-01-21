@@ -11,7 +11,7 @@ public:
 
 	void OnUpdate() override
 	{
-		RE_INFO("Test layer updated");
+		//RE_INFO("Test layer updated");
 	}
 
 	void OnEvent(Reaper::Event& event) override

@@ -77,6 +77,13 @@ namespace Reaper {
 			data.EventCallback(event);
 		});
 
+		glfwSetCharCallback(m_Window, [](GLFWwindow* window, unsigned int KeyCode)
+			{
+				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+				KeyTypedEvent event(KeyCode);
+				data.EventCallback(event);
+			});
+
 		glfwSetKeyCallback(m_Window, [](GLFWwindow* window, int key, int scancode, int action, int mods)
 		{
 			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
