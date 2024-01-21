@@ -3,7 +3,7 @@ workspace "Reaper"
     startproject "Sandbox"
 
 	configurations {
-		"Deubg",
+		"Debug",
 		"Release",
 		"Dist"
 	}
@@ -23,6 +23,7 @@ project "Reaper"
 	location "Reaper"
 	kind "SharedLib"
 	language "C++"
+	staticruntime "Off"
 
 	targetdir ("bin/".. outputdir.. "/%{prj.name}")
 	objdir ("bin-int/".. outputdir.. "/%{prj.name}")
@@ -54,14 +55,13 @@ project "Reaper"
 	
 
 	filter "system:windows"
-		cppdialect "C++17"
+		cppdialect "C++20"
 		staticruntime "On"
 		systemversion "latest"
 
 		defines {
 			"RE_PLATFORM_WINDOWS",
 			"RE_BUILD_DLL",
-			"RE_ENABLE_ASSERTS",
 			"GLFW_INCLUDE_NONE",
 		}
 
@@ -69,19 +69,19 @@ project "Reaper"
 			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
 		}
 	
-	filter "Configurations:Debug"
-		defines "RE_DEBUG"
-		buildoptions "/MDd"
+	filter "configurations:Debug"
+		defines {"RE_DEBUG"}
+		runtime "Debug"
 		symbols "On"
 	
-	filter "Configurations:Release"
-		defines "RE_RELEASE"
-		buildoptions "/MD"
+	filter "configurations:Release"
+		defines {"RE_RELEASE"}
+		runtime "Release"
 		optimize "On"
 
-	filter "Configurations:Dist"
-		defines "RE_DIST"
-		buildoptions "/MD"
+	filter "configurations:Dist"
+		defines {"RE_DIST"}
+		runtime "Release"
 		optimize "On"
 
 
@@ -90,6 +90,7 @@ project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	staticruntime "Off"
 
 	targetdir ("bin/".. outputdir.. "/%{prj.name}")
 	objdir ("bin-int/".. outputdir.. "/%{prj.name}")
@@ -109,25 +110,24 @@ project "Sandbox"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
-		staticruntime "On"
+		cppdialect "C++20"
 		systemversion "latest"
 
 		defines {
-			"RE_PLATFORM_WINDOWS"
+			"RE_PLATFORM_WINDOWS",
 		}
 	
-	filter "Configurations:Debug"
+	filter "configurations:Debug"
 		defines "RE_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 	
-	filter "Configurations:Release"
+	filter "configurations:Release"
 		defines "RE_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
-	filter "Configurations:Dist"
+	filter "configurations:Dist"
 		defines "RE_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
