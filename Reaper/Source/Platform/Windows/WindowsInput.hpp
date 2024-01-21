@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Reaper/Input.hpp"
+#include "Reaper/Input/Input.hpp"
 
 namespace Reaper {
 	class WindowsInput : public Input

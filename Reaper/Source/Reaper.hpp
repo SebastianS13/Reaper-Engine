@@ -4,7 +4,7 @@
 
 #include "Reaper/Application.hpp"
 
-#include "Reaper/Layer.hpp"
+#include "Reaper/Events/Layer.hpp"
 #include "Reaper/Log.hpp"
 
 
@@ -12,9 +12,9 @@
 
 //-- INPUT --------------------------
 
-#include "Reaper/Input.hpp"
-#include "Reaper/KeyCodes.hpp"
-#include "Reaper/MouseButtonCodes.hpp"
+#include "Reaper/Input/Input.hpp"
+#include "Reaper/Input/KeyCodes.hpp"
+#include "Reaper/Input/MouseButtonCodes.hpp"
 
 //-----------------------------------
 

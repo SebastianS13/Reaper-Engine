@@ -5,7 +5,7 @@
 #include "Reaper/Log.hpp"
 #include <glad/glad.h>
 
-#include "Reaper/Input.hpp"
+#include "Reaper/Input/Input.hpp"
 
 namespace Reaper {
 
