@@ -11,12 +11,13 @@ public:
 
 	void OnUpdate() override
 	{
-		//RE_INFO("Test layer updated");
+
+		if (Reaper::Input::IsKeyPressed(RE_KEY_TAB))
+			RE_INFO("Tab key pressed");
 	}
 
 	void OnEvent(Reaper::Event& event) override
 	{
-		RE_TRACE("{0}", event);
 	}
 };
 

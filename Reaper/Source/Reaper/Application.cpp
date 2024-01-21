@@ -61,8 +61,6 @@ namespace Reaper {
 
 	void Application::Run()
 	{
-		// Test event to make sure event system is working
-
 		while (m_Running)
 		{
 			glClearColor(1, 0, 1, 1);
@@ -72,9 +70,6 @@ namespace Reaper {
 			{
 				layer->OnUpdate();
 			}
-
-			auto [x, y] = Input::GetMousePosition();
-			RE_CORE_TRACE("{0}, {1}", x, y);
 
 			m_window->OnUpdate();
 		}
