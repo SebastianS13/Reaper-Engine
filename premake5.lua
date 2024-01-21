@@ -48,15 +48,13 @@ project "Reaper"
 		"GLFW",
 		"Glad",
 		"ImGUI",
-		"opengl32.lib",
-		"msvcrt.lib"
+		"opengl32.lib"
 	}
 
 	
 
 	filter "system:windows"
 		cppdialect "C++20"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines {
@@ -71,17 +69,17 @@ project "Reaper"
 	
 	filter "configurations:Debug"
 		defines {"RE_DEBUG"}
-		runtime "Debug"
+		buildoptions "/MDd"
 		symbols "On"
 	
 	filter "configurations:Release"
 		defines {"RE_RELEASE"}
-		runtime "Release"
+		buildoptions "/MDd"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines {"RE_DIST"}
-		runtime "Release"
+		buildoptions "/MD"
 		optimize "On"
 
 
@@ -119,15 +117,15 @@ project "Sandbox"
 	
 	filter "configurations:Debug"
 		defines "RE_DEBUG"
-		runtime "Debug"
+		buildoptions "/MDd"
 		symbols "On"
 	
 	filter "configurations:Release"
 		defines "RE_RELEASE"
-		runtime "Release"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "RE_DIST"
-		runtime "Release"
+		buildoptions "/MD"
 		optimize "On"

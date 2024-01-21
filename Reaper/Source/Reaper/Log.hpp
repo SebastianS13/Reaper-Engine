@@ -25,11 +25,9 @@ namespace Reaper {
 #define RE_CORE_INFO(...)      ::Reaper::Log::GetCoreLogger()->info(__VA_ARGS__)
 #define RE_CORE_WARN(...)      ::Reaper::Log::GetCoreLogger()->warn(__VA_ARGS__)
 #define RE_CORE_ERROR(...)     ::Reaper::Log::GetCoreLogger()->error(__VA_ARGS__)
-#define RE_CORE_FATAL(...)     ::Reaper::Log::GetCoreLogger()->fatal(__VA_ARGS__)
 
 // Client logger macros
 #define RE_TRACE(...)          ::Reaper::Log::GetClientLogger()->trace(__VA_ARGS__)
 #define RE_INFO(...)           ::Reaper::Log::GetClientLogger()->info(__VA_ARGS__)
 #define RE_WARN(...)           ::Reaper::Log::GetClientLogger()->warn(__VA_ARGS__)
 #define RE_ERROR(...)          ::Reaper::Log::GetClientLogger()->error(__VA_ARGS__)
-#define RE_FATAL(...)          ::Reaper::Log::GetClientLogger()->fatal(__VA_ARGS__)
