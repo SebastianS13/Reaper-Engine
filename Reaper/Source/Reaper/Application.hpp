@@ -1,7 +1,10 @@
 #pragma once
 
 #include "Core.hpp"
+
 #include "Events/Event.hpp"
+#include "Reaper/Events/ApplicationEvent.hpp"
+
 #include "Window.hpp"
 
 namespace Reaper {
@@ -14,7 +17,10 @@ namespace Reaper {
 
 		void Run();
 
+		void OnEvent(Event& e);
 	private:
+		bool OnWindowClose(WindowCloseEvent& e);
+
 		std::unique_ptr<Window> m_window = nullptr;
 		bool m_Running = true;
 	};
