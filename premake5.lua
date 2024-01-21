@@ -24,7 +24,8 @@ project "Reaper"
 	}
 
 	includedirs {
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"Reaper/Source",
 	}
 
 	filter "system:windows"
