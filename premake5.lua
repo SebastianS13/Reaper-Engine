@@ -13,9 +13,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDirs = {}
 IncludeDirs["GLFW"] = "Reaper/vendor/GLFW/include"
 IncludeDirs["Glad"] = "Reaper/vendor/Glad/include"
+IncludeDirs["ImGUI"] = "Reaper/vendor/ImGUI"
 
 include "Reaper/vendor/GLFW"
 include "Reaper/vendor/Glad"
+include "Reaper/vendor/ImGUI"
 
 project "Reaper"
 	location "Reaper"
@@ -37,12 +39,14 @@ project "Reaper"
 		"%{prj.name}/vendor/spdlog/include",
 		"Reaper/Source",
 		"%{IncludeDirs.GLFW}",
-		"%{IncludeDirs.Glad}"
+		"%{IncludeDirs.Glad}",
+		"%{IncludeDirs.ImGUI}"
 	}
 
 	links {
 		"GLFW",
 		"Glad",
+		"ImGUI",
 		"opengl32.lib",
 		"msvcrt.lib"
 	}

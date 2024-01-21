@@ -5,6 +5,7 @@
 #include "Reaper/Application.hpp"
 #include "Reaper/Layer.hpp"
 #include "Reaper/Log.hpp"
+#include "Reaper/ImGUI/ImGuiLayer.hpp"
 
 //-- EMTRY POINT --------------------
 

@@ -26,6 +26,7 @@ public:
 	Sandbox()
 	{
 		PushLayer(new TestLayer());
+		PushOverlay(new Reaper::ImGuiLayer());
 	}
 
 	~Sandbox()

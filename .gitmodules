@@ -4,3 +4,6 @@
 [submodule "Reaper/vendor/GLFW"]
 	path = Reaper/vendor/GLFW
 	url = https://github.com/TheCherno/glfw
+[submodule "Reaper/vendor/ImGUI"]
+	path = Reaper/vendor/ImGUI
+	url = https://github.com/TheCherno/imgui
