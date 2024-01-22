@@ -14,6 +14,7 @@ IncludeDirs = {}
 IncludeDirs["GLFW"] = "Reaper/vendor/GLFW/include"
 IncludeDirs["Glad"] = "Reaper/vendor/Glad/include"
 IncludeDirs["ImGUI"] = "Reaper/vendor/ImGUI"
+IncludeDirs["glm"] = "Reaper/vendor/glm"
 
 include "Reaper/vendor/GLFW"
 include "Reaper/vendor/Glad"
@@ -41,7 +42,8 @@ project "Reaper"
 		"Reaper/Source",
 		"%{IncludeDirs.GLFW}",
 		"%{IncludeDirs.Glad}",
-		"%{IncludeDirs.ImGUI}"
+		"%{IncludeDirs.ImGUI}",
+		"%{IncludeDirs.glm}"
 	}
 
 	links {
@@ -101,6 +103,7 @@ project "Sandbox"
 	includedirs {
 		"Reaper/vendor/spdlog/include",
 		"Reaper/Source",
+		"%{IncludeDirs.glm}"
 	}
 
 	links {

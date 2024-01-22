@@ -7,3 +7,6 @@
 [submodule "Reaper/vendor/ImGUI"]
 	path = Reaper/vendor/ImGUI
 	url = https://github.com/TheCherno/imgui
+[submodule "Reaper/vendor/glm"]
+	path = Reaper/vendor/glm
+	url = https://github.com/g-truc/glm
